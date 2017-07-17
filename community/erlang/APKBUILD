@@ -1,10 +1,11 @@
 # Contributor: Michael Mason <ms13sp@gmail.com>
+# Contributor: Gabriele Santomaggio <g.santomaggio@gmail.com>
 # Maintainer: Marlus Saraiva <marlus.saraiva@gmail.com>
 
 pkgname=erlang
 pkgver=19.3.0
 _srcver=19.3
-pkgrel=3
+pkgrel=4
 pkgdesc="General-purpose programming language and runtime environment"
 url="http://www.erlang.org/"
 license="ASL 2.0"
@@ -86,7 +87,6 @@ build() {
 		--enable-threads \
 		--enable-shared-zlib \
 		--enable-ssl=dynamic-ssl-lib \
-		--disable-hipe \
 		|| return 1
 	make -j1 || return 1
 }

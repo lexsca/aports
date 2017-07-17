@@ -4,7 +4,7 @@
 pkgname=openssh
 pkgver=7.5_p1
 _myver=${pkgver%_*}${pkgver#*_}
-pkgrel=2
+pkgrel=3
 pkgdesc="Port of OpenBSD's free SSH release"
 url="http://www.openssh.org/portable.html"
 arch="all"
@@ -15,7 +15,7 @@ makedepends_build="linux-pam-dev"
 makedepends_host="libressl-dev zlib-dev linux-headers"
 makedepends="$makedepends_build $makedepends_host"
 # Add more packages support here e.g. kerberos
-_pkgsupport="pam"
+[ -z "$BOOTSTRAP" ] && _pkgsupport="pam"
 for _flavour in $_pkgsupport; do
 	_subpackages="$_subpackages ${pkgname}-server-$_flavour:_pkg_flavour"
 done
